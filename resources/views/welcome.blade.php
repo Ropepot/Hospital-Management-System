@@ -60,20 +60,18 @@
         <div class="collapse navbar-collapse" id="navbarSupport">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="index.html">Home</a>
+              <a class="nav-link" href="#home">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="about.html">About Us</a>
+              <a class="nav-link" href="#about-us">About Us</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="doctors.html">Doctors</a>
+              <a class="nav-link" href="#doctors">Doctors</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="blog.html">News</a>
+              <a class="nav-link" href="#blog">News</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contact</a>
-            </li>
+            
             @if (Route::has('login'))
                             <nav class="-mx-3 flex flex-1 justify-end">
                                 @auth
@@ -110,7 +108,7 @@
     </nav>
   </header>
 
-  <div class="page-hero bg-image overlay-dark" style="background-image: url(https://pbs.twimg.com/media/EbM5TXlUYAES6z9.jpg:large);">
+  <div class="page-hero bg-image overlay-dark" style="background-image: url(https://s.yimg.com/ny/api/res/1.2/NVqtcfHeOofoIFFbldM2Cg--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MDtoPTM1NA--/https://media.zenfs.com/en/insidermonkey.com/4cb4fd1cd5865ea98d94bc3dbc308256);" id="home">
     <div class="hero-section">
       <div class="container text-center wow zoomIn">
         <span class="subhead">Let's make your life happier</span>
@@ -153,7 +151,7 @@
       </div>
     </div> <!-- .page-section -->
 
-    <div class="page-section pb-0">
+    <div class="page-section pb-0" id="about-us">
       <div class="container">
         <div class="row align-items-center">
           <div class="col-lg-6 py-3 wow fadeInUp">
@@ -171,7 +169,7 @@
     </div> <!-- .bg-light -->
   </div> <!-- .bg-light -->
 
-  <div class="page-section">
+  <div class="page-section" id="doctors">
     <div class="container">
       <h1 class="text-center mb-5 wow fadeInUp">Our Doctors</h1>
 
@@ -255,7 +253,7 @@
     </div>
   </div>
 
-  <div class="page-section bg-light">
+  <div class="page-section bg-light" id="blog">
     <div class="container">
       <h1 class="text-center wow fadeInUp">Latest News</h1>
       <div class="row mt-5">
@@ -390,10 +388,12 @@
           </ul>
         </div>
         <div class="col-sm-6 col-lg-3 py-3">
-          <h5>Contact</h5>
-          <p class="footer-link mt-2">Rizal Street</p>
-          <a href="#" class="footer-link">09052253911</a>
-          <a href="#" class="footer-link">nrg-infinitech@gmail.com</a>
+        <h5>Contacts</h5>
+          <ul class="footer-menu">
+            <li><a href="#">Rizal Street, Ligao City</a></li>
+            <li><a href="#">09052253911</a></li>
+            <li><a href="#">nrg-infinitech@gmail.com</a></li>
+          </ul>
 
           <h5 class="mt-3">Social Media</h5>
           <div class="footer-sosmed mt-3">
