@@ -9,13 +9,11 @@
                         <img src="assets/images/dashboard/Group126@2x.png" class="gradient-corona-img img-fluid" alt="">
                       </div>
                       <div class="col-5 col-sm-7 col-xl-8 p-0">
-                        <h4 class="mb-1 mb-sm-0">ADMIN DASHBOARD</h4>
+                        <h4 class="mb-1 mb-sm-0">WELCOME TO ADMIN DASHBOARD</h4>
                         <p class="mb-0 font-weight-normal d-none d-sm-block">NRG-INFINITECH HOSPITAL MANAGEMENT SYSTEM</p>
                       </div>
                       <div class="col-3 col-sm-2 col-xl-2 ps-0 text-center">
-                        <span>
-                          <a href="https://www.bootstrapdash.com/product/corona-admin-template/" target="_blank" class="btn btn-outline-light btn-rounded get-started-btn">Upgrade to PRO</a>
-                        </span>
+                       
                       </div>
                     </div>
                   </div>

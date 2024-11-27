@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Homecontroller;
 
+use App\Http\Controllers\AdminController;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -19,3 +21,7 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+
+Route::get('/add_doctor_view', [AdminController::class,'addview']);   
+
+Route::post('/upload_doctor', [AdminController::class,'upload']); 

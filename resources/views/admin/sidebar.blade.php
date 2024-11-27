@@ -1,6 +1,6 @@
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
-          <a class="sidebar-brand brand-logo" href="index.html"><img src="https://i.ibb.co/n3vg9tT/Screenshot-2024-11-25-172118.png" alt="logo" /></a>
+          <a class="sidebar-brand brand-logo" href="home#"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiLNBi4k9xgxBTY6njlI--KIYrZ40b2DiSBZhYASVWTEYqPhSjPrjhh840dIeSbcINLfE&usqp=CAU" alt="logo" /></a>
           <a class="sidebar-brand brand-logo-mini" href="index.html"><img src="assets/images/logo-mini.svg" alt="logo" /></a>
         </div>
         <ul class="nav">
@@ -68,39 +68,15 @@
               </ul>
             </div>
           </li>
-          <li class="nav-item menu-items">
-            <a class="nav-link" href="pages/forms/basic_elements.html">
-              <span class="menu-icon">
-                <i class="mdi mdi-playlist-play"></i>
-              </span>
-              <span class="menu-title">Manage Inventory</span>
-            </a>
-          </li>
-          <li class="nav-item menu-items">
-            <a class="nav-link" href="pages/tables/basic-table.html">
-              <span class="menu-icon">
-                <i class="mdi mdi-table-large"></i>
-              </span>
-              <span class="menu-title">Billing</span>
-            </a>
-          </li>
-          <li class="nav-item menu-items">
-            <a class="nav-link" href="pages/charts/chartjs.html">
-              <span class="menu-icon">
-                <i class="mdi mdi-chart-bar"></i>
-              </span>
-              <span class="menu-title">Add Doctors</span>
-            </a>
-          </li>
-          
         
-          <li class="nav-item menu-items">
-            <a class="nav-link" href="http://www.bootstrapdash.com/demo/corona-free/jquery/documentation/documentation.html">
-              <span class="menu-icon">
-                <i class="mdi mdi-file-document-box"></i>
-              </span>
-              <span class="menu-title">Documentation</span>
-            </a>
-          </li>
+          <li class="nav-item menu-items {{ Request::is('add_doctor_view') ? 'active' : '' }}">
+          <a class="nav-link {{ Request::is('add_doctor_view') ? 'active' : '' }}" href="{{ url('add_doctor_view') }}">
+           <span class="menu-icon">
+            <i class="mdi mdi-file-document-box"></i>
+        </span>
+        <span class="menu-title">Add Doctors</span>
+    </a>
+</li>
+
         </ul>
       </nav>
