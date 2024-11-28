@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Doctors;
+use App\Models\Doctor;
 
 class AdminController extends Controller
 {
@@ -15,7 +15,7 @@ class AdminController extends Controller
 
     public function upload(Request $request)
     {
-        // Validate input data
+        
         $request->validate([
             'name' => 'required|string|max:255',
             'room' => 'required|string|max:50',
@@ -24,15 +24,15 @@ class AdminController extends Controller
             'file' => 'required|mimes:jpg,jpeg,png|max:2048', // Max size 2MB
         ]);
 
-        // Create a new Doctor instance
-        $doctor = new Doctors();
+        
+        $doctor = new Doctor();
 
-        // Handle file upload
+        
         $image = $request->file('file');
         $imagename = time().'.'.$image->getClientOriginalExtension();
         $image->move('doctorimage', $imagename);
 
-        // Assign data to model properties
+        
         $doctor->image = $imagename;
         $doctor->name = $request->name;
         $doctor->room = $request->room;

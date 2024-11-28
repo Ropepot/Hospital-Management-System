@@ -10,6 +10,8 @@ use Illuminate\Support\Facades\Auth;
 
 use App\Models\User;
 
+use App\Models\Doctor;
+
 class Homecontroller extends Controller
 {
     public function redirect()
@@ -25,5 +27,18 @@ class Homecontroller extends Controller
                 return view('admin.home');
             }
         }
+
+        else
+        {
+            return redirect()->back();
+        }
     }
+
+
+            public function index()
+        {
+            $doctor = doctor::all(); 
+            return view('user.home', compact('doctor')); 
+        }
+
 }
