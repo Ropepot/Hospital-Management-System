@@ -75,6 +75,11 @@
             <li class="nav-item">
               <a class="nav-link" href="#appointments">Appointment</a>
             </li>
+
+            <li class="nav-item">
+              <a class="nav-link" style="background-color:greenyellow; color: white" href="{{url('myappointment')}}">My Appointments</a>
+            </li>
+
             <x-app-layout>
             </x-app-layout>
                                                          
