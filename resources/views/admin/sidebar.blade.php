@@ -73,10 +73,46 @@
           <a class="nav-link {{ Request::is('add_doctor_view') ? 'active' : '' }}" href="{{ url('add_doctor_view') }}">
            <span class="menu-icon">
             <i class="mdi mdi-file-document-box"></i>
-        </span>
-        <span class="menu-title">Add Doctors</span>
-    </a>
-</li>
+            </span>
+            <span class="menu-title">Add Doctors</span>
+          </a>
+        </li>
+
+        <li class="nav-item menu-items {{ Request::is('all_doctors') ? 'active' : '' }}">
+          <a class="nav-link {{ Request::is('add_doctor_view') ? 'active' : '' }}" href="">
+           <span class="menu-icon">
+            <i class="mdi mdi-file-document-box"></i>
+            </span>
+            <span class="menu-title">All Doctors</span>
+          </a>
+        </li>
+
+        <li class="nav-item menu-items {{ Request::is('manage_inventory') ? 'active' : '' }}">
+          <a class="nav-link {{ Request::is('add_doctor_view') ? 'active' : '' }}" href="">
+           <span class="menu-icon">
+            <i class="mdi mdi-file-document-box"></i>
+            </span>
+            <span class="menu-title">Manage Inventory </span>
+          </a>
+        </li>
+
+        <li class="nav-item menu-items {{ Request::is('manage_inventory') ? 'active' : '' }}">
+          <a class="nav-link {{ Request::is('add_doctor_view') ? 'active' : '' }}" href="">
+           <span class="menu-icon">
+            <i class="mdi mdi-file-document-box"></i>
+            </span>
+            <span class="menu-title">Manage Appointments </span>
+          </a>
+        </li>
+
+        <li class="nav-item menu-items {{ Request::is('manage_inventory') ? 'active' : '' }}">
+          <a class="nav-link {{ Request::is('add_doctor_view') ? 'active' : '' }}" href="">
+           <span class="menu-icon">
+            <i class="mdi mdi-file-document-box"></i>
+            </span>
+            <span class="menu-title">Billing </span>
+          </a>
+        </li>
 
         </ul>
       </nav>

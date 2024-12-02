@@ -85,6 +85,19 @@
     </nav>
   </header>
 
+        @if (session()->has('message'))
+
+      <div class="alert alert-success">
+
+        <button type="button" class="close" data-dismiss="alert">x</button>
+
+          {{ session()->get('message') }}
+
+      </div>
+
+      @endif
+
+
   <div class="page-hero bg-image overlay-dark" style="background-image: url(https://s.yimg.com/ny/api/res/1.2/NVqtcfHeOofoIFFbldM2Cg--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MDtoPTM1NA--/https://media.zenfs.com/en/insidermonkey.com/4cb4fd1cd5865ea98d94bc3dbc308256);" id="home">
     <div class="hero-section">
       <div class="container text-center wow zoomIn">

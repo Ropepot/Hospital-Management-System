@@ -12,6 +12,9 @@ use App\Models\User;
 
 use App\Models\Doctor;
 
+use App\Models\Appointment;
+
+
 class Homecontroller extends Controller
 {
     public function redirect()
@@ -20,7 +23,8 @@ class Homecontroller extends Controller
         {
             if (Auth::user()->usertype=='0')
             {
-                    return view('user.home'); 
+                    $doctor = doctor::all(); 
+                    return view('user.home', compact('doctor')); 
             }
             else
             {
@@ -37,8 +41,38 @@ class Homecontroller extends Controller
 
             public function index()
         {
+            if(Auth::id())
+            {
+                return redirect('home');
+            }
+            else
+            {
             $doctor = doctor::all(); 
             return view('user.home', compact('doctor')); 
+            }
+        }
+
+
+        public function appointment(Request $request)
+        {
+            $data = new appointment;
+
+            $data->name=$request->name;
+            $data->email=$request->email;
+            $data->date=$request->date;
+            $data->contact_number=$request->number;
+            $data->message=$request->message;
+            $data->doctor=$request->doctor    ;
+            $data->status="In progress";
+
+            if(Auth::id())
+            {
+            $data->user_id=Auth::user()->id;
+            }
+
+            $data->save();
+
+            return redirect()->back()->with('message', 'Appointment submitted. We will contact you shortly.');
         }
 
 }
