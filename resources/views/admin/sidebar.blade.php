@@ -78,6 +78,16 @@
           </a>
         </li>
 
+        <li class="nav-item menu-items {{ Request::is('showdoctor') ? 'active' : '' }}">
+          <a class="nav-link {{ Request::is('showdoctor') ? 'active' : '' }}" href="{{url('showdoctor')}}">
+           <span class="menu-icon">
+            <i class="mdi mdi-file-document-box"></i>
+            </span>
+            <span class="menu-title">All Doctors </span>
+          </a>
+        </li>
+
+
         <li class="nav-item menu-items {{ Request::is('showappointment') ? 'active' : '' }}">
           <a class="nav-link {{ Request::is('showappointment') ? 'active' : '' }}" href="{{url('showappointment')}}">
            <span class="menu-icon">
@@ -87,6 +97,7 @@
           </a>
         </li>
 
+        
         <li class="nav-item menu-items {{ Request::is('manage_inventory') ? 'active' : '' }}">
           <a class="nav-link {{ Request::is('add_doctor_view') ? 'active' : '' }}" href="">
            <span class="menu-icon">

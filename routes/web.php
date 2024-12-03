@@ -38,3 +38,11 @@ Route::get('/showappointment', [AdminController::class,'showappointment']);
 Route::get('/approved/{id}', [AdminController::class,'approved']); 
 
 Route::get('/cancelled/{id}', [AdminController::class,'cancelled']); 
+
+Route::get('/showdoctor', [AdminController::class,'showdoctor']); 
+
+Route::get('/deletedoctor/{id}', [AdminController::class,'deletedoctor']); 
+
+Route::get('/updatedoctor/{id}', [AdminController::class,'updatedoctor']); 
+
+Route::post('/editdoctor/{id}', [AdminController::class,'editdoctor']); 
