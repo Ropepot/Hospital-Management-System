@@ -92,7 +92,7 @@
 
   <div align="center" style="padding:70px">
     <table>
-        <tr style="background-color:black;">
+        <tr align="center" style="background-color:black;">
             <th style="padding:10px; font-size: 20px; color:white;">Doctor Name</th>
             <th style="padding:10px; font-size: 20px; color:white;">Date</th>
             <th style="padding:10px; font-size: 20px; color:white;">Message</th>
@@ -112,7 +112,7 @@
             <td style="padding:10px; color:white;">{{$appoints->message}}</td>
             <td style="padding:10px; color:white;">{{$appoints->status}}</td>
             <td>
-                <a class="btn btn-danger" onclick="return confirm('Are you sure to cancel this?')" href="{{url('cancel_appoint', $appoints->id)}}">Cancel</a>
+                <a class="btn btn-danger" style="margin-bottom:10px"return confirm('Are you sure to cancel this?')" href="{{url('cancel_appoint', $appoints->id)}}">Cancel</a>
             </td>
         </tr>
         @endforeach

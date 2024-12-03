@@ -62,7 +62,7 @@ class Homecontroller extends Controller
             $data->date=$request->date;
             $data->contact_number=$request->number;
             $data->message=$request->message;
-            $data->doctor=$request->doctor    ;
+            $data->doctor=$request->doctor;
             $data->status="In progress";
 
             if(Auth::id())
