@@ -97,4 +97,18 @@ class Homecontroller extends Controller
 
             return redirect()->back();
         }
+
+        public function my_invoice()
+        {
+            if(Auth::id())
+            {
+                $userid = Auth::user()->id;
+                $appoint =  appointment::where('user_id', $userid)->get();
+                return view('user.my_invoice', compact('appoint'));
+            }
+            else
+            {
+                return redirect()->back();
+            }
+        }
 }   

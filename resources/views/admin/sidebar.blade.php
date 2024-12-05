@@ -97,23 +97,13 @@
           </a>
         </li>
 
-        
-        <li class="nav-item menu-items {{ Request::is('manage_inventory') ? 'active' : '' }}">
-          <a class="nav-link {{ Request::is('add_doctor_view') ? 'active' : '' }}" href="">
-           <span class="menu-icon">
-            <i class="mdi mdi-file-document-box"></i>
-            </span>
-            <span class="menu-title">Manage Inventory </span>
-          </a>
-        </li>
-
        
-        <li class="nav-item menu-items {{ Request::is('manage_inventory') ? 'active' : '' }}">
-          <a class="nav-link {{ Request::is('add_doctor_view') ? 'active' : '' }}" href="">
+        <li class="nav-item menu-items {{ Request::is('showinvoice') ? 'active' : '' }}">
+          <a class="nav-link {{ Request::is('showinvoice') ? 'active' : '' }}" href="{{url('showinvoice')}}">
            <span class="menu-icon">
             <i class="mdi mdi-file-document-box"></i>
             </span>
-            <span class="menu-title">Billing </span>
+            <span class="menu-title">Reports and Billing </span>
           </a>
         </li>
 

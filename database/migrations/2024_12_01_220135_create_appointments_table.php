@@ -21,6 +21,8 @@ return new class extends Migration
             $table->string('message')->nullable();
             $table->string('status')->nullable();
             $table->string('user_id')->nullable();
+            $table->string('Report')->nullable();
+            $table->string('Billing')->nullable();
             $table->timestamps();
         });
     }

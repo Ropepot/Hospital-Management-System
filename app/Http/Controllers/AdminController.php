@@ -6,7 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Appointment;
 use Illuminate\Http\Request;
 use App\Models\Doctor;
-
+use Notifications;
+use App\Notifications\SendEmailNotification;
 
 class AdminController extends Controller
 {
@@ -116,4 +117,91 @@ class AdminController extends Controller
         return redirect()->back()->with('message', 'Doctor Details Updated Successfully');
     }
 
+    // public function emailview($id)
+    // {
+    //     $data=appointment::find($id);
+    //     return view('admin.email_view', compact('data'));
+    // }
+
+    // public function sendemail(Request $request, $id)
+    // {
+    // $data = appointment::find($id);
+
+    // $details = [
+    //     'greeting' => $request->greeting,
+    //     'body' => $request->body,
+    //     'endpart' => $request->endpart,
+    // ];
+
+    // Notifications::send($data, new SendEmailNotification($details));
+
+    // return redirect()->back()->with('message', 'Email sent successfully');
+    // }
+
+    public function showinvoice()
+    {
+        $data=appointment::all();
+        return view('admin.showinvoice', compact('data'));
+    }
+
+    
+    public function report($id)
+    {
+        $appoint = appointment::find($id);
+        return view('admin.report', compact('appoint'));
+    }
+    
+    public function generateReport(Request $request, $id)
+    {
+        
+
+        $appoint = appointment::find($id);
+
+        
+        
+        $appoint->name = $request->name;
+        $appoint->doctor = $request->doctor;
+        $appoint->contact_number = $request->contact;
+        $appoint->Remarks = $request->Report;
+        
+        $appoint->save();
+
+        
+        return redirect()->back()->with('message', 'Report generated successfully!');
+    }
+
+    public function billing($id)
+    {
+        $appoint = appointment::find($id);
+        return view('admin.billing', compact('appoint'));
+    }
+
+    public function generateBill(Request $request, $id)
+    {
+        
+
+        $appoint = appointment::find($id);
+
+        
+        
+        $appoint->name = $request->name;
+        $appoint->doctor = $request->doctor;
+        $appoint->contact_number = $request->contact;
+        $appoint->Billing = $request->Billing;
+        
+        $appoint->save();
+
+        
+        return redirect()->back()->with('message', 'Billing generated successfully!');
+    }
+
+    public function showDoctorCount() {
+        $doctor = doctor::count(); 
+        return view('admin.body', compact('data'));
+    }
+    
+
+
+
 }
+

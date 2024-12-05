@@ -65,9 +65,9 @@
             <li class="nav-item">
               <a class="nav-link" href="#about-us">About Us</a>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a class="nav-link" href="#doctors">Doctors</a>
-            </li>
+            </li> -->
             <li class="nav-item">
               <a class="nav-link" href="#blog">News</a>
             </li>
@@ -156,7 +156,7 @@
         <div class="row align-items-center">
           <div class="col-lg-6 py-3 wow fadeInUp">
             <h1>Welcome to Your Health <br> Center</h1>
-            <p class="text-grey mb-4">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Accusantium aperiam earum ipsa eius, inventore nemo labore eaque porro consequatur ex aspernatur. Explicabo, excepturi accusantium! Placeat voluptates esse ut optio facilis!</p>
+            <p class="text-grey mb-4">Our Management technology is built on a foundation of the most secure practices in the industry. NRG-Infinitech utilizes securely managed and continuously monitored servers. Our data goes through SSL encryption, and we utilize two-factor identification to make sure our customers experience security at every level. Hundreds of healthcare organizations nationwide trust our system with their information every day. </p>
             <a href="about.html" class="btn btn-primary">Learn More</a>
           </div>
           <div class="col-lg-6 wow fadeInRight" data-wow-delay="400ms">
@@ -169,7 +169,7 @@
     </div> <!-- .bg-light -->
   </div> <!-- .bg-light -->
 
-  <div class="page-section" id="doctors">
+  <!-- <div class="page-section" id="doctors">
     <div class="container">
       <h1 class="text-center mb-5 wow fadeInUp">Our Doctors</h1>
 
@@ -251,7 +251,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 
   <div class="page-section bg-light" id="blog">
     <div class="container">
@@ -331,7 +331,7 @@
         </div>
 
         <div class="col-12 text-center mt-4 wow zoomIn">
-          <a href="blog.html" class="btn btn-primary">Read More</a>
+          <a href="" class="btn btn-primary">Read More</a>
         </div>
 
       </div>
@@ -421,6 +421,8 @@
 <script src="../assets/vendor/wow/wow.min.js"></script>
 
 <script src="../assets/js/theme.js"></script>
+
+
   
 </body>
 </html>

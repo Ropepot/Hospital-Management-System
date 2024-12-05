@@ -1,29 +1,19 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-  <title> NRG-INFINITECH HOSPITAL MANAGEMENT SYSTEM</title>
-
+  <title>NRG-INFINITECH HOSPITAL MANAGEMENT SYSTEM</title>
   <meta name="copyright" content="MACode ID, https://macodeid.com/">
 
-
   <link rel="stylesheet" href="../assets/css/maicons.css">
-
   <link rel="stylesheet" href="../assets/css/bootstrap.css">
-
   <link rel="stylesheet" href="../assets/vendor/owl-carousel/css/owl.carousel.css">
-
   <link rel="stylesheet" href="../assets/vendor/animate/animate.css">
-
   <link rel="stylesheet" href="../assets/css/theme.css">
 </head>
 <body>
-
   <!-- Back to top button -->
   <div class="back-to-top"></div>
 
@@ -52,56 +42,52 @@
 
     <nav class="navbar navbar-expand-lg navbar-light shadow-sm">
       <div class="container">
-        <a class="navbar-brand" href="#"><span class="text-primary">NRG-INFINITECH</span>  Hospital Management System</a>
+        <a class="navbar-brand" href="#"><span class="text-primary">NRG-INFINITECH</span> Hospital Management System</a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupport" aria-controls="navbarSupport" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupport">
+
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#home">Home</a>
-            </li>
+          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" style="white-space: nowrap" href="#" id="myAppointmentsDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+                Menu
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="myAppointmentsDropdown">
+              <li><a class="dropdown-item {{ Request::is('/') ? 'active' : '' }}"  href="{{ url('/home/#home') }}">Home</a></li>
+                <li><a class="dropdown-item {{ Request::is('/') ? 'active' : '' }}"  href="{{ url('/home/#about-us') }}">About Us</a></li>
+                <li><a class="dropdown-item {{ Request::is('/') ? 'active' : '' }}"  href="{{ url('/home/#doctors') }}">Doctors</a></li>
+                <li><a class="dropdown-item {{ Request::is('/') ? 'active' : '' }}" href="{{ url('/home/#news') }}">News</a></li>
+                
+              </ul>
+           
             <li class="nav-item">
-              <a class="nav-link" href="#about-us">About Us</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#doctors">Doctors</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#blog">News</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#appointments">Appointment</a>
+              <a class="nav-link{{ Request::is('/') ? 'active' : '' }}" href="{{ url('/home/#appointments') }}">Make Appointment</a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" style="background-color:greenyellow; color: white" href="{{url('myappointment')}}">My Appointments</a>
+              <a class="nav-link" style="margin-right:5px; background-color:green; color: white"href="{{url('myappointment')}}">My Appointments</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" style="margin-left:5px; background-color:green; color: white" href="{{url('my_invoice')}}">My Reports and Billing</a>
             </li>
 
             <x-app-layout>
             </x-app-layout>
-                                                         
-                         
           </ul>
         </div> <!-- .navbar-collapse -->
       </div> <!-- .container -->
     </nav>
   </header>
 
-        @if (session()->has('message'))
-
-      <div class="alert alert-success">
-
-        <button type="button" class="close" data-dismiss="alert">x</button>
-
-          {{ session()->get('message') }}
-
-      </div>
-
-      @endif
-
+  @if (session()->has('message'))
+    <div class="alert alert-success">
+      <button type="button" class="close" data-dismiss="alert">x</button>
+      {{ session()->get('message') }}
+    </div>
+  @endif
 
   <div class="page-hero bg-image overlay-dark" style="background-image: url(https://s.yimg.com/ny/api/res/1.2/NVqtcfHeOofoIFFbldM2Cg--/YXBwaWQ9aGlnaGxhbmRlcjt3PTY0MDtoPTM1NA--/https://media.zenfs.com/en/insidermonkey.com/4cb4fd1cd5865ea98d94bc3dbc308256);" id="home">
     <div class="hero-section">
@@ -112,7 +98,6 @@
       </div>
     </div>
   </div>
-
 
   <div class="bg-light">
     <div class="page-section py-3 mt-md-n5 custom-index">
@@ -146,26 +131,27 @@
       </div>
     </div> <!-- .page-section -->
 
-    <div class="page-section pb-0" id="about-us">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-lg-6 py-3 wow fadeInUp">
-            <h1>Welcome to Your Health <br> Center</h1>
-            <p class="text-grey mb-4">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Accusantium aperiam earum ipsa eius, inventore nemo labore eaque porro consequatur ex aspernatur. Explicabo, excepturi accusantium! Placeat voluptates esse ut optio facilis!</p>
-            <a href="about.html" class="btn btn-primary">Learn More</a>
-          </div>
-          <div class="col-lg-6 wow fadeInRight" data-wow-delay="400ms">
-            <div class="img-place custom-img-1">
-              <img src="../assets/img/bg-doctor.png" alt="">
-            </div>
+
+  
+  <div class="page-section pb-0" id="about-us">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6 py-3 wow fadeInUp">
+          <h1>Welcome to Your Health <br> Center</h1>
+          <p class="text-grey mb-4">Our Management technology is built on a foundation of the most secure practices in the industry. NRG-Infinitech utilizes securely managed and continuously monitored servers. Our data goes through SSL encryption, and we utilize two-factor identification to make sure our customers experience security at every level. Hundreds of healthcare organizations nationwide trust our system with their information every day.   </p>
+          <a href="about.html" class="btn btn-primary">Learn More</a>
+        </div>
+        <div class="col-lg-6 wow fadeInRight" data-wow-delay="400ms">
+          <div class="img-place custom-img-1">
+            <img src="../assets/img/bg-doctor.png" alt="">
           </div>
         </div>
       </div>
-    </div> <!-- .bg-light -->
-  </div> <!-- .bg-light -->
+    </div>
+  </div>
 
   @include('user.doctor')
-  
+
   <div class="page-section bg-light" id="blog">
     <div class="container">
       <h1 class="text-center wow fadeInUp">Latest News</h1>
@@ -244,13 +230,17 @@
         </div>
 
         <div class="col-12 text-center mt-4 wow zoomIn">
-          <a href="blog.html" class="btn btn-primary">Read More</a>
+          <a href="" class="btn btn-primary">Read More</a>
         </div>
 
       </div>
     </div>
-  
-    @include('user.appointment')
+  </div> <!-- .page-section -->
+     
+       
+  </div> <!-- .page-section -->
+
+  @include('user.appointment')
 
   <div class="page-section banner-home bg-image" style="background-image: url(../assets/img/banner-pattern.svg);">
     <div class="container py-5 py-lg-0">
@@ -267,7 +257,10 @@
         </div>
       </div>
     </div>
-  </div> <!-- .banner-home -->
+  </div> <!-- .banner-home -->  
+
+
+
 
   <footer class="page-footer">
     <div class="container">
@@ -323,15 +316,10 @@
     </div>
   </footer>
 
-<script src="../assets/js/jquery-3.5.1.min.js"></script>
-
-<script src="../assets/js/bootstrap.bundle.min.js"></script>
-
-<script src="../assets/vendor/owl-carousel/js/owl.carousel.min.js"></script>
-
-<script src="../assets/vendor/wow/wow.min.js"></script>
-
-<script src="../assets/js/theme.js"></script>
-  
+  <script src="../assets/js/jquery-3.5.1.min.js"></script>
+  <script src="../assets/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/vendor/owl-carousel/js/owl.carousel.min.js"></script>
+  <script src="../assets/vendor/wow/wow.min.js"></script>
+  <script src="../assets/js/theme.js"></script>
 </body>
 </html>

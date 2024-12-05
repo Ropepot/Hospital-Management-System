@@ -59,7 +59,6 @@
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupport">
-
         <ul class="navbar-nav ml-auto">
           <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" style="white-space: nowrap" href="#" id="myAppointmentsDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
@@ -99,29 +98,28 @@
             <th style="padding:10px; font-size: 20px; color:white;">Doctor Name</th>
             <th style="padding:10px; font-size: 20px; color:white;">Date</th>
             <th style="padding:10px; font-size: 20px; color:white;">Message</th>
-            <th style="padding:10px; font-size: 20px; color:white;">Status</th>
-            <th style="padding:10px; font-size: 20px; color:white;">Cancel Appointment</th>
+            <th style="padding:10px; font-size: 20px; color:white;">Remarks</th>
+            <th style="padding:10px; font-size: 20px; color:white;">Billing</th>
         </tr>
 
-        @if($appoint->isEmpty())
+        @if($appoint->where('status', 'Approved')->isEmpty())
         <tr style="background-color:black;" align="center">
-            <td colspan="5" style="padding:20px; color:white;">No appointments as of now</td>
+            <td colspan="5" style="padding:20px; color:white;">No approved appointments as of now</td>
         </tr>
         @else
-        @foreach($appoint as $appoints)
+        @foreach($appoint->where('status', 'Approved') as $appoints)
         <tr style="background-color:black;" align="center">
             <td style="padding:10px; color:white;">{{$appoints->doctor}}</td>
             <td style="padding:10px; color:white;">{{$appoints->date}}</td>
             <td style="padding:10px; color:white;">{{$appoints->message}}</td>
-            <td style="padding:10px; color:white;">{{$appoints->status}}</td>
-            <td>
-                <a class="btn btn-danger" style="margin-bottom:10px"return confirm('Are you sure to cancel this?')" href="{{url('cancel_appoint', $appoints->id)}}">Cancel</a>
-            </td>
+            <td style="padding:10px; color:white;">{{$appoints->Remarks}}</td>
+            <td style="padding:10px; color:white;">{{$appoints->Billing}}</td>
         </tr>
         @endforeach
         @endif
     </table>
 </div>
+
 
   <footer class="page-footer">
     <div class="container">
