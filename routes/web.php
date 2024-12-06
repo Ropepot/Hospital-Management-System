@@ -63,4 +63,12 @@ Route::post('/generateBill/{id}', [AdminController::class,'generateBill']);
 
 Route::get('/my_invoice', [HomeController::class,'my_invoice']); 
 
+Route::get('/all_users', [AdminController::class,'all_users']); 
+
+Route::get('/showPatientHistory/{id}', [AdminController::class,'showPatientHistory']); 
+
+Route::get('/deleteUser/{id}', [AdminController::class,'deleteUser']); 
+
+Route::get('/deleteAppointment/{id}', [AdminController::class,'deleteAppointment']); 
+
 // Route::get('/showDoctorCount', [AdminController::class,'showDoctorCount']); 

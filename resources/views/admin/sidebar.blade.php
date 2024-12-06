@@ -68,6 +68,14 @@
               </ul>
             </div>
           </li>
+          <li class="nav-item menu-items {{ Request::is('all_users') ? 'active' : '' }}">
+          <a class="nav-link {{ Request::is('all_users') ? 'active' : '' }}" href="{{url('all_users')}}">
+           <span class="menu-icon">
+            <i class="mdi mdi-file-document-box"></i>
+            </span>
+            <span class="menu-title">All Users </span>
+          </a>
+        </li>
         
           <li class="nav-item menu-items {{ Request::is('add_doctor_view') ? 'active' : '' }}">
           <a class="nav-link {{ Request::is('add_doctor_view') ? 'active' : '' }}" href="{{ url('add_doctor_view') }}">

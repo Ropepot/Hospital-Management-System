@@ -104,7 +104,7 @@
 
         @if($appoint->where('status', 'Approved')->isEmpty())
         <tr style="background-color:black;" align="center">
-            <td colspan="5" style="padding:20px; color:white;">No approved appointments as of now</td>
+            <td colspan="5" style="padding:20px; color:white;">No appointments as of now</td>
         </tr>
         @else
         @foreach($appoint->where('status', 'Approved') as $appoints)

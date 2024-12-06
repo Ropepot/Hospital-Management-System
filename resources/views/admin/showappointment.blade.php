@@ -21,7 +21,7 @@
         @include('admin.navbar')
         <!-- partial -->
         <div class="container-fluid page-body-wrapper">
-            <div style="padding-top:100px; margin-right:25px;">
+            <div style="padding-top:75px; margin-right:25px;">
 
             @if($data->isEmpty())
             <p style="font-size:20px; color:white; padding:150px;">No appointments as of now.</p>
@@ -35,8 +35,9 @@
                         <th style="padding:10px;white-space: nowrap">Date</th>
                         <th style="padding:10px;">Message</th>
                         <th style="padding:10px;white-space: nowrap">Status</th>
-                        <th style="padding:10px;white-space: nowrap">Approved</th>
-                        <th style="padding:10px;white-space: nowrap">Cancelled</th>
+                        <th style="padding:10px;">Approved</th>
+                        <th style="padding:10px;">Cancelled</th>
+                        <th style="padding:10px;">Delete Appointment</th>
                         <!-- <th style="padding:10px;">Send Email</th> -->
                     </tr>
             
@@ -57,9 +58,9 @@
                         <td>
                             <a class="btn btn-danger" href="{{url('cancelled', $appoint->id)}}">Cancelled</a>
                         </td>
-                        <!-- <td>
-                            <a class="btn btn-primary" href="{{url('emailview', $appoint->id)}}">Mail</a>
-                        </td> -->
+                        <td>
+                            <a onclick="return confirm('Are you sure to delete this?')" class="btn btn-danger" href="{{url('deleteAppointment', $appoint->id)}}">Delete</a>
+                        </td>
                     </tr>
 
                     @endforeach

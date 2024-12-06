@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use App\Models\Appointment;
 use Illuminate\Http\Request;
 use App\Models\Doctor;
+use App\Models\User;
 use Notifications;
 use App\Notifications\SendEmailNotification;
 
@@ -195,10 +197,54 @@ class AdminController extends Controller
         return redirect()->back()->with('message', 'Billing generated successfully!');
     }
 
-    public function showDoctorCount() {
-        $doctor = doctor::count(); 
-        return view('admin.body', compact('data'));
+    public function all_Users()
+    {
+       
+        $data=user::all();
+        $appoint=appointment::all();
+        return view('admin.all_users', compact('data', 'appoint'));
     }
+
+    public function showPatientHistory($id)
+{
+    // Find the user by ID
+    $user = User::find($id);
+
+    // Check if user exists
+    if (!$user) {
+        return redirect()->back()->with('error', 'User not found.');
+    }
+
+    // Fetch the appointments related to the user
+    $appoint = $user->appointments; // Assuming 'appointments' is the relationship name
+
+    // Return the view with the appointments data
+    return view('admin.showPatientHistory', compact('appoint'));
+}
+    public function deleteUser($id)
+    {
+        $data=user::find($id);
+        $data->delete();
+
+        return redirect()->back();
+    }
+
+    public function deleteAppointment($id)
+    {
+        $data=appointment::find($id);
+        $data->delete();
+
+        return redirect()->back();
+    }
+
+
+
+
+
+    // public function showDoctorCount() {
+    //     $doctor = doctor::count(); 
+    //     return view('admin.body', compact('data'));
+    // }
     
 
 
