@@ -17,9 +17,7 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified',
 ])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+    
 });
 
 
@@ -71,4 +69,9 @@ Route::get('/deleteUser/{id}', [AdminController::class,'deleteUser']);
 
 Route::get('/deleteAppointment/{id}', [AdminController::class,'deleteAppointment']); 
 
-// Route::get('/showDoctorCount', [AdminController::class,'showDoctorCount']); 
+Route::get('/dashboard', [AdminController::class,'dashboard']); 
+
+
+
+
+

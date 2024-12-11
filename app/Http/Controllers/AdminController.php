@@ -207,18 +207,18 @@ class AdminController extends Controller
 
     public function showPatientHistory($id)
 {
-    // Find the user by ID
+    
     $user = User::find($id);
 
-    // Check if user exists
+    
     if (!$user) {
         return redirect()->back()->with('error', 'User not found.');
     }
 
-    // Fetch the appointments related to the user
-    $appoint = $user->appointments; // Assuming 'appointments' is the relationship name
+    
+    $appoint = $user->appointments; 
 
-    // Return the view with the appointments data
+   
     return view('admin.showPatientHistory', compact('appoint'));
 }
     public function deleteUser($id)
@@ -237,15 +237,21 @@ class AdminController extends Controller
         return redirect()->back();
     }
 
-
-
-
-
-    // public function showDoctorCount() {
-    //     $doctor = doctor::count(); 
-    //     return view('admin.body', compact('data'));
-    // }
+    public function dashboard()
+    {
+       
+        $data=user::all();
+        $appoint=appointment::all();
+        $doctor=doctor::all();
+        return view('admin.dashboard', compact('data', 'appoint','doctor'));
+    }
     
+
+    
+
+   
+
+
 
 
 

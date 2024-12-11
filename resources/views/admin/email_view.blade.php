@@ -41,7 +41,7 @@
               
               
 
-          <form action="{{ url('sendemail') }}" method="POST" >
+          <form action="{{ url('sendemail', $data->id) }}" method="POST" >
 
           @if (session()->has('message'))
 

@@ -29,7 +29,7 @@ class Homecontroller extends Controller
             else
             {
                 return view('admin.home');
-            }
+            }   
         }
 
         else

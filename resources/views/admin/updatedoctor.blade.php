@@ -75,9 +75,12 @@
                     </div>
                     
                 </form>
+                <div style="padding: 15px; ">
+                <button type="button" class="btn btn-secondary" onclick="history.back()">Back</button>
+                </div>
                 
             </div>
-
+            
         </div>
        
     <!-- container-scroller -->

@@ -44,6 +44,7 @@
 
                 @endif
                 <form action="{{url('generateReport', $appoint->id)}}" method="POST" enctype="multipart/form-data">
+                    
                     @csrf
                     <div style="padding:15px">
                         <label>Patient's Name</label>
@@ -71,6 +72,9 @@
                     </div>
                     
                 </form>
+                <div style="padding: 15px; ">
+                <button type="button" class="btn btn-secondary" onclick="history.back()">Back</button>
+                </div>
                 
             </div>
 

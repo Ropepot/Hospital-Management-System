@@ -40,7 +40,7 @@
                     </tr>
             
                     @foreach($data as $user)
-
+                    @if($user->usertype != 1)
                     <tr align="center" style="background-color:skyblue;">
 
                         <td style="padding:10px; white-space: nowrap">{{$user->name}}</td>
@@ -55,11 +55,14 @@
                         </td>
                         
                       
-
+                      @endif
                     @endforeach
 
                 </table>
             @endif
+            <div style="padding: 15px; ">
+                <button type="button" class="btn btn-secondary" onclick="history.back()">Back</button>
+            </div>
             </div>
         </div>
     <!-- container-scroller -->

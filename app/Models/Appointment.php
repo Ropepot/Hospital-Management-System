@@ -10,5 +10,5 @@ class Appointment extends Model
 {
     use HasFactory;
 
-    use Notifiable;
+    use Notifiable; 
 }

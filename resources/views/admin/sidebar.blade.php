@@ -1,6 +1,6 @@
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
-          <a class="sidebar-brand brand-logo" href="home#"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiLNBi4k9xgxBTY6njlI--KIYrZ40b2DiSBZhYASVWTEYqPhSjPrjhh840dIeSbcINLfE&usqp=CAU" alt="logo" /></a>
+          <a class="sidebar-brand brand-logo" href="dashboard"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiLNBi4k9xgxBTY6njlI--KIYrZ40b2DiSBZhYASVWTEYqPhSjPrjhh840dIeSbcINLfE&usqp=CAU" alt="logo" /></a>
           <a class="sidebar-brand brand-logo-mini" href="index.html"><img src="assets/images/logo-mini.svg" alt="logo" /></a>
         </div>
         <ul class="nav">
@@ -67,6 +67,17 @@
                 <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Typography</a></li>
               </ul>
             </div>
+
+
+            <li class="nav-item menu-items {{ Request::is('dashboard') ? 'active' : '' }}">
+          <a class="nav-link {{ Request::is('dashboard') ? 'active' : '' }}" href="{{url('dashboard')}}">
+           <span class="menu-icon">
+            <i class="mdi mdi-file-document-box"></i>
+            </span>
+            <span class="menu-title">Dashboard </span>
+          </a>
+        </li>
+
           </li>
           <li class="nav-item menu-items {{ Request::is('all_users') ? 'active' : '' }}">
           <a class="nav-link {{ Request::is('all_users') ? 'active' : '' }}" href="{{url('all_users')}}">
